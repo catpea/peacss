@@ -19,20 +19,25 @@ $enable-gradients: true;
 $enable-shadows: true;
 
 // Customize some defaults
+$theme-color-interval: 10%;
 
 $white:   #EEFFEE;
 $black:   #000000;
 
-$blue:    #819ec1;
+$blue:    #94c4fe;
 $indigo:  #413358;
 $purple:  #453b57;
 $pink:    #6b3d52;
-$red:     #70464a;
+$red:     #63050e;
 $orange:  #8f7057;
 $yellow:  #746a4b;
-$green:   #4e6a55;
+$green:   #96c87e;
 $teal:    #3e574f;
-$cyan:    #506b6f;
+$cyan:    #34aabb;
+
+
+
+$text-muted: rgb(71, 75, 84);
 
 
 // $body-color: $white;
@@ -48,6 +53,18 @@ $cyan:    #506b6f;
 // $box-shadow-sm:               0 .125rem .25rem rgba($black, .075) !default;
 // $box-shadow:                  0 .5rem 1rem rgba($black, .55) !default;
 // $box-shadow-lg:               0 1rem 3rem rgba($black, .175) !default;
+
+
+
+$theme-colors: (
+  "poem":    $red
+);
+
+
+
+
+
+
 
 //
 // Bring in Bootstrap
@@ -66,6 +83,34 @@ $cyan:    #506b6f;
 @import "bootstrap/scss/functions"; // Required
 @import "bootstrap/scss/variables"; // Required
 @import "bootstrap/scss/mixins"; // Required
+
+
+
+
+
+
+// @mixin bg-variant($parent, $color, $ignore-warning: false) {
+//   #{$parent} {
+//
+//     // original background-color: $color !important;
+//
+//     background-color: darken($color, 10%) !important;
+//   }
+//
+//   a#{$parent},
+//   button#{$parent} {
+//     @include hover-focus() {
+//       background-color: darken($color, 30%) !important;
+//     }
+//   }
+//
+// }
+
+
+
+
+
+
 @import "bootstrap/scss/root";
 @import "bootstrap/scss/reboot"; // Required
 @import "bootstrap/scss/type";
