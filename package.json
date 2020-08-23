@@ -1,6 +1,6 @@
 {
   "name": "stylesheet",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "A simple and lightweight bootstrap theme with nice colors",
   "scripts": {
     "save": "git add .; git commit -m 'New Release'; git push; npm version patch; echo do not npm publish; git push;",
