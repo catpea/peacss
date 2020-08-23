@@ -1,2 +1,6 @@
-# stylesheet
-A simple and lightweight bootstrap theme with nice colors
+Pea Css
+Lightweight bootstrap theme with delicate colors (pronounced "pieces")
+
+## Usage
+
+See ```npm run``` for commands/

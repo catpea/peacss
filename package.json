@@ -1,0 +1,46 @@
+{
+  "name": "stylesheet",
+  "version": "1.1.0",
+  "description": "A simple and lightweight bootstrap theme with nice colors",
+  "scripts": {
+    "build": "npm run css;",
+    "css-compile": "node-sass --include-path node_modules --output-style compressed --source-map true --source-map-contents true --precision 6 scss -o assets/css/",
+    "css-prefix": "postcss --replace assets/css/stylesheet.css --use autoprefixer --map",
+    "css-purge": "purgecss --css assets/css/stylesheet.css --content index.html --output assets/css/",
+    "css": "npm run css-compile && npm run css-prefix;",
+    "server": "serve --listen 3000",
+    "watch": "nodemon -e html,scss -x \"npm run css\"",
+    "test": "npm run css"
+  },
+  "keywords": [
+    "bootstrap",
+    "sass",
+    "css",
+    "javascript",
+    "template"
+  ],
+  "author": "catpea.com",
+  "license": "MIT",
+  "dependencies": {
+    "bootstrap": "^4.5.2",
+    "jquery": "^3.5.1",
+    "popper.js": "1.16.1-lts"
+  },
+  "devDependencies": {
+    "autoprefixer": "^9.8.6",
+    "node-sass": "^4.14.1",
+    "nodemon": "^2.0.4",
+    "postcss-cli": "^7.1.1",
+    "purgecss": "^2.3.0",
+    "serve": "^11.3.2"
+  },
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/catpea/stylesheet.git"
+  },
+  "bugs": {
+    "url": "https://github.com/catpea/stylesheet/issues"
+  },
+  "homepage": "https://github.com/catpea/stylesheet#readme"
+}
