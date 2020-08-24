@@ -19,7 +19,7 @@ $enable-gradients: true;
 $enable-shadows: true;
 
 // Customize some defaults
-$theme-color-interval: 10%;
+$theme-color-interval: 3%;
 
 $white:   #EEFFEE;
 $black:   #000000;
@@ -37,9 +37,9 @@ $cyan:    #34aabb;
 
 
 
-$text-muted: rgb(71, 75, 84);
+// $text-muted: rgb(71, 75, 84);
 
-
+$card-bg: #bee4c2;
 // $body-color: $white;
 // $body-bg: #002b36; // Solarize Color
 //
@@ -51,13 +51,15 @@ $text-muted: rgb(71, 75, 84);
 // $dark: $cyan;
 //
 // $box-shadow-sm:               0 .125rem .25rem rgba($black, .075) !default;
-// $box-shadow:                  0 .5rem 1rem rgba($black, .55) !default;
+$box-shadow:                  0 1rem 3rem rgba($black, .75) !default;
 // $box-shadow-lg:               0 1rem 3rem rgba($black, .175) !default;
 
 
 
 $theme-colors: (
-  "poem":    $red
+  "primary": #b359a4,
+  "secondary": #f9eeb7,
+  "dark": #033744,
 );
 
 
@@ -131,7 +133,7 @@ $theme-colors: (
 
 @import "bootstrap/scss/breadcrumb";
 @import "bootstrap/scss/pagination";
-// @import "bootstrap/scss/badge";
+@import "bootstrap/scss/badge";
 // @import "bootstrap/scss/jumbotron";
 @import "bootstrap/scss/alert";
 // @import "bootstrap/scss/progress";
@@ -153,7 +155,7 @@ $theme-colors: (
 //
 
 body {
-  padding-top: 6rem;
+  // padding-top: 6rem;
 }
 
 
