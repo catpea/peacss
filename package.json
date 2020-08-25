@@ -5,15 +5,16 @@
   "scripts": {
 
     "save": "git add .; git commit -m 'New Release'; git push; npm version patch; npm publish; git push;",
-    "build": "npm run css;",
+    "build": "npm run css; cataclysm;",
 
-    "css-compile": "node-sass --include-path node_modules --output-style compressed --source-map true --source-map-contents true --precision 6 scss -o assets/css/",
+    "css-compile": "node-sass --include-path node_modules --output-style compressed --source-map true --source-map-contents true --precision 6 src/scss -o assets/css/",
     "css-prefix": "postcss --replace assets/css/stylesheet.css --use autoprefixer --map",
     "css-purge": "purgecss --css assets/css/stylesheet.css --content index.html --output assets/css/",
+
     "css": "npm run css-compile && npm run css-prefix;",
 
     "server": "serve --listen 3000",
-    "watch": "nodemon --watch src -e html,scss -x \"npm run css\"",
+    "watch": "nodemon --watch src -e scss,hbs,mjs,txt -x \"npm run build\"",
 
     "test": "npm run css"
   },
@@ -32,6 +33,7 @@
     "popper.js": "1.16.1-lts"
   },
   "devDependencies": {
+    "cataclysm": "^1.0.5",
     "autoprefixer": "^9.8.6",
     "node-sass": "^4.14.1",
     "nodemon": "^2.0.4",

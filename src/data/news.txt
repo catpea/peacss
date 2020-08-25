@@ -1,0 +1,4 @@
+# files starting with hash/pound are ignored, blank lines are ignored.
+# date is in (new Date()).toISOString() format
+
+2020-08-05T14:57:42.342Z | Just Launched | Beautiful day, Cheerio!
