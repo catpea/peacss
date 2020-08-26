@@ -93,7 +93,7 @@ $cyan:   #7b979f;
 // $teal:    #5cb89c !default;
 // $cyan:    #71aab3 !default;
 //
-// $secondary:     $indigo !default;
+$secondary:     $indigo !default;
 // $success:       $green !default;
 // $info:          $cyan !default;
 // $warning:       $yellow !default;
@@ -103,7 +103,7 @@ $cyan:   #7b979f;
 // $primary: #0d6193;
 // $dark:          #031c24;
 $body-bg: #031c24;
-// $card-bg: #afb9c8;
+$card-bg: $yellow;
 // $list-group-bg: $card-bg;
 // $link-color: #911683;
 
