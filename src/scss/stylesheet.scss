@@ -5,6 +5,71 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
 
+ //
+ // $white:    #fff !default;
+ // $black:    #000 !default;
+ //
+ // $gray-100: #f8f9fa !default;
+ // $gray-200: #e9ecef !default;
+ // $gray-300: #dee2e6 !default;
+ // $gray-400: #ced4da !default;
+ // $gray-500: #adb5bd !default;
+ // $gray-600: #6c757d !default;
+ // $gray-700: #495057 !default;
+ // $gray-800: #343a40 !default;
+ // $gray-900: #212529 !default;
+
+ // $blue:    #0d6efd !default;
+ // $indigo:  #6610f2 !default;
+ // $purple:  #6f42c1 !default;
+ // $pink:    #d63384 !default;
+ // $red:     #dc3545 !default;
+ // $orange:  #fd7e14 !default;
+ // $yellow:  #ffc107 !default;
+ // $green:   #28a745 !default;
+ // $teal:    #20c997 !default;
+ // $cyan:    #17a2b8 !default;
+
+//
+//
+//
+//
+// $blue:   #707483;
+// $indigo: #524e61;
+// $purple: #5f596e;
+// $pink:   #846d75;
+// $red:    #886b6d;
+// $orange: #ae9c96;
+// $yellow: #d1c9be;
+// $green:  #879389;
+// $teal:   #a7b3ae;
+// $cyan:   #8b9497;
+//
+//
+//
+//
+$blue:   #66739f;
+$indigo: #554881;
+$purple: #64538e;
+$pink:   #a1607a;
+$red:    #ab5c61;
+$orange: #c69582;
+$yellow: #ddc7a5;
+$green:  #749979;
+$teal:   #92b9a8;
+$cyan:   #7b979f;
+//
+//
+//
+
+
+
+
+
+
+
+
+
 // $white:    #cce1e9 !default;
 // $gray-100: #f8f9fa !default;
 // $gray-200: #e9ecef !default;
@@ -28,15 +93,19 @@
 // $teal:    #5cb89c !default;
 // $cyan:    #71aab3 !default;
 //
-// $primary:       rgb(106, 223, 227) !default;
 // $secondary:     $indigo !default;
 // $success:       $green !default;
 // $info:          $cyan !default;
 // $warning:       $yellow !default;
 // $danger:        $red !default;
 // $light:         $gray-100 !default;
-// $dark:          $gray-800 !default;
 
+// $primary: #0d6193;
+// $dark:          #031c24;
+$body-bg: #031c24;
+// $card-bg: #afb9c8;
+// $list-group-bg: $card-bg;
+// $link-color: #911683;
 
 // scss-docs-start import-stack
 // Configuration
@@ -46,18 +115,26 @@
 
 
 
-
+// $light-colors: ();
+// @each $name, $color in $theme-colors {
+//   $light-colors: map-merge( $light-colors, ( #{$name}: lighten($color, 20%) ) );
+// }
+// $dark-colors: ();
+// @each $name, $color in $theme-colors {
+//   $dark-colors: map-merge( $dark-colors, ( #{$name}: darken($color, 10%) ) );
+// }
+//
+//
+//
+//
+//
 $bg-gradient: ();
 @each $name, $color in $theme-colors {
-  $bg-gradient: map-merge( $bg-gradient, ( #{$name}: linear-gradient(120deg, adjust-hue($color, -30deg), $color, adjust-hue($color, 30deg) ) ) );
+  $bg-gradient: map-merge( $bg-gradient, ( #{$name}: linear-gradient(120deg, adjust-hue($color, -30deg), $color, adjust-hue($color, 20deg) ) ) );
 }
-$utilities: (
 
-  "btn-gradient": (
-    property: background,
-    class: btn-gradient,
-    values: $bg-gradient
-  ),
+
+$utilities: (
 
   "bg-gradient": (
     property: background,
@@ -75,6 +152,30 @@ $utilities: (
       none: none,
     )
   )
+  // //
+  // "background-color-light": (
+  //   property: background-color,
+  //   class: bg-light,
+  //   values: map-merge( $light-colors, ( "body": $body-bg, "white": $white, "transparent": transparent ))
+  // ),
+  //
+  // "background-color-dark": (
+  //   property: background-color,
+  //   class: bg-dark,
+  //   values: map-merge( $dark-colors, ( "body": $body-bg, "white": $white, "transparent": transparent ))
+  // ),
+  //
+  // "color-light": (
+  //   property: color,
+  //   class: text-light,
+  //   values: map-merge( $light-colors, ( "white": $white, "body": $body-color, "muted": $text-muted, "black-50": rgba($black, .5), "white-50": rgba($white, .5), "reset": inherit, ) )
+  // ),
+  // "color-dark": (
+  //   property: color,
+  //   class: text-dark,
+  //   values: map-merge( $dark-colors, ( "white": $white, "body": $body-color, "muted": $text-muted, "black-50": rgba($black, .5), "white-50": rgba($white, .5), "reset": inherit, ) )
+  // ),
+
 );
 
 
@@ -128,7 +229,7 @@ $utilities: (
 // scss-docs-end import-stack
 
 
-
-a {
-  text-decoration: none;
-}
+//
+// a {
+//   text-decoration: none;
+// }
