@@ -11,6 +11,7 @@
     "css": "npm run css-compile && npm run css-prefix;",
     "server": "serve --listen 3000",
     "watch": "nodemon --watch src -e scss,hbs,mjs,txt -x \"npm run build\"",
+    "watch-and-play": "nodemon --watch src -e scss,hbs,mjs,txt -x \"npm run build; cp ~/Development/stylesheet/assets/css/stylesheet.css* ~/Development/website/docs/css/stylesheet\"",
     "test": "npm run css"
   },
   "keywords": [

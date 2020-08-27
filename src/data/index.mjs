@@ -52,6 +52,17 @@ const data = {
       {name:'dark', classes: "text-white"},
     ],
 
+    button:[
+      {name:'primary'},
+      {name:'secondary'},
+      {name:'success'},
+      {name:'info'},
+      {name:'warning'},
+      {name:'danger'},
+      {name:'light', classes: "text-dark"},
+      {name:'dark', classes: "text-white"},
+    ],
+
   }
 
 

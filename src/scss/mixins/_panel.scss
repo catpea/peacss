@@ -1,0 +1,9 @@
+@mixin panel-variant($background, $border, $color) {
+  color: $color;
+  @include gradient-bg($background);
+  border-color: $border;
+
+  .panel-link {
+    color: color-level($color, $panel-color-level);
+  }
+}

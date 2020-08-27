@@ -1,0 +1,24 @@
+//
+// Base styles
+//
+
+.panel {
+  position: relative;
+  padding: $panel-padding-y $panel-padding-x;
+  margin-bottom: $panel-margin-bottom;
+  border: $panel-border-width solid transparent;
+  @include border-radius($panel-border-radius);
+}
+
+// Provide class for links that match panels
+.panel-link {
+  font-weight: $panel-link-font-weight;
+}
+
+// Generate contextual modifier classes for colorizing the panel.
+
+@each $color, $value in $theme-colors {
+  .panel-#{$color} {
+    @include panel-variant(color-level($value, $panel-bg-level), color-level($value, $panel-border-level), color-level($value, $panel-color-level));
+  }
+}

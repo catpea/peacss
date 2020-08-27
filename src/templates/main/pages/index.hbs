@@ -15,9 +15,9 @@
   </style>
 </head>
 
-<body class="bg-gradient-primary">
+<body>
 
-  <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark">
     <div class="container-fluid">
       <a class="navbar-brand" href="#">{{options.title}}</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
@@ -49,13 +49,45 @@
     </div>
   </nav>
 
+
   <main class="container mt-3">
+
+
+
+<!--
 
     <div class="starter-template text-center mt-5 py-5 px-3">
       <h1>{{options.title}} Starter Template</h1>
       <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
     </div>
 
+
+    <div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 g-4 mb-5 bg-dark rounded shadow-inset">
+      {{#each data.color.context}}
+        <div class="col p-5">
+
+          <div class="panel panel-{{name}} shadow">
+            This is a {{name}} panel. and this is a <a href="#" class="panel-link">.panel-link</a>
+          </div>
+
+        </div>
+      {{/each}}
+    </div>
+
+
+    <div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 g-4 mb-5 bg-dark rounded shadow-inset">
+      {{#each data.color.name}}
+        <div class="col p-5">
+          <div class="card" style="background-color: var(--bs-{{name}});">
+            <div class="card-body">
+              <h5 class="card-title text-uppercase">{{capitalize name}} Card</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a href="#" class="btn btn-primary shadow">Go somewhere</a>
+            </div>
+          </div>
+        </div>
+      {{/each}}
+    </div>
 
     <div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 g-4 mb-5 bg-dark rounded shadow-inset">
       {{#each data.color.context}}
@@ -74,7 +106,7 @@
     <div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 g-4 mb-5 bg-dark rounded shadow-inset">
       {{#each data.color.context}}
         <div class="col p-5">
-          <div class="card shadow bg-gradient-{{name}}{{#if classes}} {{classes}}{{/if}}">
+          <div class="card shadow bg-{{name}}{{#if classes}} {{classes}}{{/if}}">
             <div class="card-body">
               <h5 class="card-title">Card {{classes}}</h5>
               <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -89,12 +121,74 @@
     <div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 g-4 mb-5">
       {{#each data.color.context}}
         <div class="col p-5">
+          <div class="card shadow bg-{{name}}{{#if classes}} {{classes}}{{/if}}">
+            <img src="assets/image/{{name}}.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">{{capitalize name}} Card </h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a href="#" class="btn btn-primary shadow mb-2">Go somewhere</a>
+            </div>
+          </div>
+        </div>
+      {{/each}}
+    </div>
+
+    <div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 g-4 mb-5">
+      {{#each data.color.context}}
+        <div class="col p-5">
+          <div class="card shadow bg-{{name}}{{#if classes}} {{classes}}{{/if}}">
+            <img src="assets/image/{{name}}.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">{{capitalize name}} Card</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                {{#each ../data.color.context}}
+                  <a href="#" class="btn btn-{{name}} shadow mb-2">{{capitalize name}} button</a>
+                {{/each}}
+            </div>
+          </div>
+        </div>
+      {{/each}}
+    </div>
+
+    <div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 g-4 mb-5">
+      {{#each data.color.context}}
+        <div class="col p-5">
           <div class="card shadow bg-gradient-{{name}}{{#if classes}} {{classes}}{{/if}}">
             <img src="assets/image/{{name}}.jpg" class="card-img-top" alt="...">
             <div class="card-body">
-              <h5 class="card-title">Card {{classes}}</h5>
+              <h5 class="card-title">{{capitalize name}} Card</h5>
               <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="btn btn-primary shadow">Go somewhere</a>
+                {{#each ../data.color.button}}
+                  <a href="#" class="btn btn-outline-{{name}} {{classes}} shadow mb-2">{{capitalize name}} button</a>
+                {{/each}}
+            </div>
+          </div>
+        </div>
+      {{/each}}
+    </div> -->
+
+    <div class="row">
+      <div class="col p-5">
+        <div class="alert alert-primary" role="alert">
+          Example of proper usage of text contexts. Please note that colored text is placed on top of a stable background so that it does not clash with the encompassing container.
+        </div>
+      </div>
+    </div>
+
+    <div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 g-4 mb-5">
+      {{#each data.color.context}}
+        <div class="col p-5">
+          <div class="card shadow bg-{{name}}{{#if classes}} {{classes}}{{/if}}">
+            <img src="assets/image/{{name}}.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">{{capitalize name}} Card</h5>
+              {{#each ../data.color.context}}
+                {{#if (matches name "dark" )}}
+                <p class="card-text text-{{name}} rounded bg-light p-2">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                {{else}}
+                <p class="card-text text-{{name}} rounded bg-dark p-2">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                {{/if}}
+              {{/each}}
             </div>
           </div>
         </div>
@@ -102,21 +196,7 @@
     </div>
 
 
-    <div class="alert alert-success shadow-inset-lg" role="alert">
-      <h4 class="alert-heading">Additional Classes You Should Know About</h4>
-        <div>
-          <p>shadow-<strong>inset</strong>-sm</p>
-          <p>shadow-<strong>inset</strong></p>
-          <p>shadow-<strong>inset</strong>-lg</p>
-        {{#each data.color.context}}
-        <p>
-          bg-<strong>gradient</strong>-{{name}}{{#if classes}} {{classes}}{{/if}}
-        </p>
-        {{/each}}
-      </div>
-      <hr>
-      <p class="mb-0">Additional classes use the utilities api, by naming the additional class as the built-in one you override the built-in thus you are granted the ability to replace built-in classes with the additional ones.</p>
-    </div>
+
 
   </main><!-- /.container -->
 

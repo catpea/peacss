@@ -3,4 +3,4 @@ Lightweight bootstrap theme with delicate colors (pronounced "pieces")
 
 ## Usage
 
-See ```npm run``` for commands/
+See ```npm run``` for commands.
