@@ -4,14 +4,14 @@
   "description": "A simple and lightweight bootstrap theme with nice colors",
   "scripts": {
     "save": "git add .; git commit -m 'New Release'; git push; npm version patch; npm publish; git push;",
-    "build": "npm run css; cataclysm;",
+    "build": "npm run css;",
     "css-compile": "node-sass --include-path node_modules --output-style compressed --source-map true --source-map-contents true --precision 6 src/scss -o assets/css/",
     "css-prefix": "postcss --replace assets/css/stylesheet.css --use autoprefixer --map",
     "css-purge": "purgecss --css assets/css/stylesheet.css --content index.html --output assets/css/",
     "css": "npm run css-compile && npm run css-prefix;",
     "server": "serve --listen 3000",
     "watch": "nodemon --watch src -e scss,hbs,mjs,txt -x \"npm run build\"",
-    "watch-and-play": "nodemon --watch src -e scss,hbs,mjs,txt -x \"npm run build; cp ~/Development/stylesheet/assets/css/stylesheet.css* ~/Development/website/docs/css/stylesheet\"",
+    "watch-and-play": "nodemon --watch src -e scss,hbs,mjs,txt -x \"npm run build; cp ~/Universe/Development/stylesheet/assets/css/stylesheet.css* ~/Universe/Development/website/docs/css/stylesheet\"",
     "test": "npm run css"
   },
   "keywords": [
@@ -25,6 +25,7 @@
   "license": "MIT",
   "dependencies": {
     "bootstrap": "^5.0.0-alpha1",
+    "fs-extra": "^9.0.1",
     "jquery": "^3.5.1",
     "popper.js": "1.16.1-lts"
   },

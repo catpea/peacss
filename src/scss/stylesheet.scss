@@ -10,15 +10,35 @@
 $primary: $blue;
 $secondary: $indigo;
 //
-$body-bg: #150114; // should be very dark
+$body-bg: #1b0e20; // should be very dark
 // $body-color: #e29a0f; // should be very dark
 //
 // $text-muted: desaturate($body-color, 50%);
 // $link-color: #f07b10; // should be very dark
 // $link-decoration: none !default;
 //
-// $card-bg: desaturate($primary, 15%);
-// $list-group-bg: $card-bg;
+
+$card-bg: #25283e;
+$card-color: #ffa100;
+$card-border-width:                 2px;
+$card-border-color:                 #1c202f;
+// $card-border-radius:                $border-radius !default;
+
+//$dark:          $gray-800 !default;
+$dark: #1f2232;
+
+$list-group-color: #c9ffc1;
+$list-group-bg:    $card-bg;
+
+$box-shadow-sm:               0.1rem 0.1rem 0.4rem 0.2rem rgba(0,0,40,.15);
+$box-shadow:                  0.3rem 0.3rem 0.8rem 0.4rem rgba(0,0,40,.2);
+$box-shadow-lg:               0.5rem 0.5rem 1.1rem 0.6rem rgba(0,0,40,.25);
+$box-shadow-inset:            inset 0.9rem 0.9rem 1.5rem -0.6rem rgba(0,0,0,0.6);
+
+$box-glow-sm:               0rem 0rem 0.3rem 0.1rem #648bff, 0rem 0rem 1.1rem 0.6rem rgba(200, 2, 255, 0.78);
+$box-glow:                  0rem 0rem 0.3rem 0.3rem #648bff, 0rem 0rem 1.1rem 0.8rem rgba(200, 2, 255, 0.78);
+$box-glow-lg:               0rem 0rem 1.1rem .6rem rgba(255, 0, 155, 0.30);
+$box-glow-inset:            inset 0rem 0rem 0.4rem -0.3rem #fff, inset 0rem 0rem 2.9rem -0.6rem rgba(255, 0, 155, 0.40);
 
 // scss-docs-start import-stack
 // Configuration
@@ -46,7 +66,33 @@ $panel-color-level:                 -5 !default;
 // Load Custom Components
 @import "panel";
 
-$utilities: ();
+$utilities: (
+
+"glow": (
+  property: box-shadow,
+  class: glow,
+  values: (
+    null: $box-glow,
+    sm: $box-glow-sm,
+    lg: $box-glow-lg,
+    inset: $box-glow-inset,
+    none: none,
+  )
+),
+
+"shadow": (
+  property: box-shadow,
+  class: shadow,
+  values: (
+    null: $box-shadow,
+    sm: $box-shadow-sm,
+    lg: $box-shadow-lg,
+    inset: $box-shadow-inset,
+    none: none,
+  )
+),
+
+);
 
 // Bootstrap
 @import "bootstrap/scss/utilities";
@@ -87,3 +133,11 @@ $utilities: ();
 // Utilities
 @import "bootstrap/scss/utilities/api";
 // scss-docs-end import-stack
+
+
+body {
+
+  background: linear-gradient(385deg, #cc2b5e 0%, #702323 20%, #281426 52%, #1a0729 100%);
+  background-attachment: fixed;
+
+}

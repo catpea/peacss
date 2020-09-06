@@ -7,6 +7,8 @@ import take from 'lodash/take.js';
 import reverse from 'lodash/reverse.js';
 
 const options = {
+  mode: 'html',
+
   debug: false,
   author: 'Dr. Meow',
   title: 'Pea Css',

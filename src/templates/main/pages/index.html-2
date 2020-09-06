@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+</head>
+<body>
+
+  <div if="id">
+    ${id}
+  </div>
+
+  <div each="data.color.context">
+    ${index}
+
+    <div if="name">
+      ${name}
+    </div>
+
+  </div>
+
+
+
+  <test brand="${options.name}"></test>
+
+    <h1 if="data.color">
+      Yah, colors exist!
+      <span if="data.color.context">Got context too</span>
+      <span if="data.color.contextddd">dddGot context too</span>
+    </h1>
+
+    <h1 each="data.color.context">${name}</h1>
+
+    <div each="data.color.context">
+      Each ${index}: ${name}
+    </div>
+
+</body>
+
+  <template name="test">
+    <!-- ${options.author} -->
+    Hello!
+  </template>
+
+</html>

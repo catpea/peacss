@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="assets/css/stylesheet.css">
+
+  <meta name="author" content="${options.author}">
+  <meta name="description" content="${options.description}">
+  <meta name="generator" content="${options.generator}">
+
+
+  <title helper="title"></title>
+
+</head>
+
+<body>
+
+  <navigation brand="${options.name}"></navigation>
+  <navigation brand="${options.name}"></navigation>
+
+
+  <main class="container mt-3">
+
+    <h1 if="data.color">
+      Yah, colors exist!
+      <span if="data.color.context">Got context too</span>
+      <span if="data.color.contextddd">dddGot context too</span>
+    </h1>
+
+    <h1 each="data.color.context">${name}</h1>
+
+    <div each="data.color.context">
+
+      <well></well>
+
+    </div>
+
+  </main><!-- /.container -->
+
+  <script type="module" src="assets/js/starter.js"></script>
+
+</body>
+
+<template name="navigation">
+
+  <!-- ${options.author} -->
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+    <div class="container-fluid">
+      <brand><brand>
+    </div>
+  </nav>
+
+</template>
+
+<template name="brand">
+  <a class="navbar-brand" href="#">${options.title}</a>
+</template>
+
+<template name="well">
+  <div class="ink-well">
+    ${name}
+  </div>
+</template>
+
+</html>

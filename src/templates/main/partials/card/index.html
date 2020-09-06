@@ -1,0 +1,8 @@
+<div class="card">
+  <img if="src" src="${src}" class="card-img-top" alt="${alt}">
+  <div slot="card-body" class="card-body">
+    <h5 if="title" class="card-title">Card title</h5>
+    <p if="text" class="card-text">${text}</p>
+    <a if="link, caption" href="${link}" class="btn btn-primary">${caption}</a>
+  </div>
+</div>

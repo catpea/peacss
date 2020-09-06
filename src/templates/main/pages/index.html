@@ -1,0 +1,54 @@
+<html lang="en">
+<body>
+
+  <div if="id">
+    ${id} (not within each)
+    <div class="second nested" if="id">
+      ${id} (nested!!!)
+    </div>
+
+  </div>
+
+
+  <section each="data.color.context">
+    ${index}/${name}
+    <p helper="dump"></p>
+    <div  if="name"> (within each)
+      ${name}
+    </div>
+  </section>
+
+
+  <foo>
+    <div if="id">
+      ${id} (THIS IS WITHIN TEMPLATE)
+    </div>
+  <foo>
+
+FOR EACH TEMPLATE TEST
+
+<div each="data.color.context">
+  <foo>
+    <div if="id" slot="body">
+      This will show in body
+      ${id} (THIS IS WITHIN TEMPLATE and EACH!)
+      <p helper="dump"></p>
+    </div>
+  <foo>
+</div>
+
+END ALL
+
+</body>
+
+<template name="foo">
+  <p>Hola! I am foo template.</p>
+  <div each="data.color.context">
+    color in foo template! ${name}
+    BODY IS HERE:
+    <slot name="body">
+    </slot>
+  </div>
+</template>
+
+</html>
