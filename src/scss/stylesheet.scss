@@ -10,7 +10,7 @@
 $primary: $blue;
 $secondary: $indigo;
 //
-$body-bg: #1b0e20; // should be very dark
+$body-bg: #26172b; //#1b0e20; // should be very dark
 // $body-color: #e29a0f; // should be very dark
 //
 // $text-muted: desaturate($body-color, 50%);
@@ -20,9 +20,9 @@ $body-bg: #1b0e20; // should be very dark
 
 $card-bg: #25283e;
 $card-color: #ffa100;
-$card-border-width:                 2px;
-$card-border-color:                 #1c202f;
-// $card-border-radius:                $border-radius !default;
+$card-border-width:                 4px;
+$card-border-color:                 #4f3150;
+$card-border-radius:                1rem;
 
 //$dark:          $gray-800 !default;
 $dark: #1f2232;
@@ -66,7 +66,83 @@ $panel-color-level:                 -5 !default;
 // Load Custom Components
 @import "panel";
 
+
+$border: 1px !default;
+$borders: (
+  0: 0,
+  1: $border * 1,
+  2: $border * 2,
+  3: $border * 3,
+  4: $border * 4,
+  5: $border * 5,
+) !default;
+
+// #fbed00 yellow-white
+// #faaa00 yellow
+
+// #f0788f // flat red
+// #eb008b // pink
+// #861d81 // purple
+// #180048 // navy
+
+// night from #673664 #433275  #17245a
+// day #f0788f #eb008b #861d81 #180048
+
+$background-colors: (
+  // "primary":    (to left) #011712 #240d33 #011712,
+  "primary":    135deg #1f1b2b #240d33 #262038,
+  "secondary":  69deg #171531 #20081b,
+  "success":    69deg #132612 #1d2b17,
+  "info":       69deg #16282f #14252d,
+  "warning":    69deg #733600 #371815,
+  "danger":     69deg #9c0058 #9c0070,
+  "light":      69deg #360e39 #0e2031,
+  "dark":       135deg #673664 #433275 #17245a,
+);
+
+$border-colors: (
+  "primary":    #fa9601,
+  "secondary":  #faba01,
+  "success":    #faba01,
+  "info":       #faba01,
+  "warning":    #faba01,
+  "danger":     #faba01,
+  "light":      #faba01,
+  "dark":       #faba01,
+);
+
+
+
+
+
+$bg-gradient: ();
+@each $name, $color in $background-colors {
+  $bg-gradient: map-merge( $bg-gradient, ( #{$name}: linear-gradient( join((), $color, $separator: comma) ) ) );
+}
+
 $utilities: (
+
+"border-color": (
+  property: border-color,
+  class: border,
+  values: map-merge($border-colors, ("white": $white))
+),
+
+
+"bg-gradients": (
+  property: background,
+  class: bg-gr,
+  values: $bg-gradient
+),
+
+
+"border-size": (
+  responsive: true,
+  property: border-width,
+  class: b,
+  values: map-merge($borders, (auto: auto))
+),
+
 
 "glow": (
   property: box-shadow,
@@ -133,11 +209,3 @@ $utilities: (
 // Utilities
 @import "bootstrap/scss/utilities/api";
 // scss-docs-end import-stack
-
-
-body {
-
-  background: linear-gradient(385deg, #cc2b5e 0%, #702323 20%, #281426 52%, #1a0729 100%);
-  background-attachment: fixed;
-
-}
